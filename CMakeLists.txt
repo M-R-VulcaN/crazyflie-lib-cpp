@@ -1,16 +1,11 @@
 cmake_minimum_required (VERSION 3.5)
 project(crazyflie-lib-cpp)
 
+#disable pybind11
+option(BUILD_PYTHON_BINDINGS OFF)
 
-# Enable C++14 and warnings
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-# dependencies
-include(crazyflie-link-cpp/CMakeLists.txt)
-
-# C++ library
+# crazyflie-link-cpp dependencies
+add_subdirectory(crazyflie-link-cpp)
 
 add_library(crazyflieLibCpp
   src/ConnectionWrapper.cpp
@@ -22,74 +17,85 @@ add_library(crazyflieLibCpp
   src/debug.cpp
   src/Log.cpp
 )
-
-# target_include_directories(libcrazyflieLibCpp
-#   PUBLIC
-#     $<INSTALL_INTERFACE:include/crazyflie_cpp>
-#     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/crazyflie_cpp>
-# )
-
-
-
-# Link pthread on Linux and Mac only
-if (NOT MSVC)
-target_link_libraries(crazyflieLibCpp
-  PRIVATE
-    pthread
+# C++ library
+target_include_directories(crazyflieLibCpp PUBLIC
+  include
 )
-endif()
+target_link_libraries(crazyflieLibCpp PUBLIC crazyflieLinkCpp)
 
-target_link_libraries(crazyflieLibCpp
-  PRIVATE
-    ${LIBUSB_LIBRARY}
+
+
+# example_basicLog
+add_executable(example_basicLog
+  examples/basicLog.cpp
 )
-set_property(TARGET crazyflieLibCpp PROPERTY POSITION_INDEPENDENT_CODE ON)
+target_link_libraries(example_basicLog
+  crazyflieLibCpp
+)
 
-# C++ example application
-if (BUILD_CPP_EXAMPLES)
-  # example_console
-  add_executable(example_console
-    examples/console.cpp
-  )
-  target_link_libraries(example_console
-    crazyflieLinkCpp
-  )
+# example_basicToc
+add_executable(example_basicToc
+  examples/basicToc.cpp
+)
+target_link_libraries(example_basicToc
+  crazyflieLibCpp
+)
 
-  # example_scan
-  add_executable(example_scan
-    examples/scan.cpp
-  )
-  target_link_libraries(example_scan
-    crazyflieLinkCpp
-  )
+# example_appChannelTest
+add_executable(example_appChannelTest
+  examples/appChannelTest.cpp
+)
+target_link_libraries(example_appChannelTest
+  crazyflieLibCpp
+)
 
-  # example_benchmark
-  add_executable(example_benchmark
-    examples/benchmark.cpp
-  )
-  target_link_libraries(example_benchmark
-    crazyflieLinkCpp
-  )
+# example_logViaAppChannel
+add_executable(example_logViaAppChannel
+  examples/logViaAppChannel.cpp
+)
+target_link_libraries(example_logViaAppChannel
+  crazyflieLibCpp
+)
 
-  # example_broadcast
-  add_executable(example_broadcast
-    examples/broadcast.cpp
-  )
-  target_link_libraries(example_broadcast
-    crazyflieLinkCpp
-  )
-endif()
+# example_connectionWorkerTest
+add_executable(example_connectionWorkerTest
+  examples/connectionWorkerTest.cpp
+)
+target_link_libraries(example_connectionWorkerTest
+  crazyflieLibCpp
+)
 
-if (BUILD_PYTHON_BINDINGS)
-  # Python bindings
-  add_subdirectory(pybind11)
+# example_resetUsb
+add_executable(example_resetUsb
+  examples/resetUsb.cpp
+)
+target_link_libraries(example_resetUsb
+  crazyflieLibCpp
+)
 
-  pybind11_add_module(cflinkcpp
-    src/python_bindings.cpp
-  )
+# example_logConnectionWorker
+add_executable(example_logConnectionWorker
+  examples/logConnectionWorker.cpp
+)
+target_link_libraries(example_logConnectionWorker
+  crazyflieLibCpp
+)
 
-  target_link_libraries(cflinkcpp
-    PRIVATE
-      crazyflieLinkCpp
-  )
-endif()
+
+# example_crazyflieLog
+add_executable(example_crazyflieLog
+  examples/crazyflieLog.cpp
+)
+target_link_libraries(example_crazyflieLog
+  crazyflieLibCpp
+)
+
+# example_stressTest
+add_executable(example_stressTest
+  examples/stressTest.cpp
+)
+target_link_libraries(example_stressTest
+  crazyflieLibCpp
+)
+
+
