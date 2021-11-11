@@ -1,5 +1,5 @@
 # crazyflie-lib-cpp
-Like crazyflie-lib-python but written fully in cpp
+Like crazyflie-lib-python but written fully in c++
 
 ## How to install 
 
