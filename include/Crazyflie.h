@@ -1,11 +1,8 @@
 #pragma once
 
 #include <map>
-#include <vector>
-#include <thread>
 #include <fstream> //for saving .csv file
 
-#include "ConnectionWrapper.h"
 #include "TocWrapper.h"
 #include "ConnectionWorker.h"
 #include "Log.h"

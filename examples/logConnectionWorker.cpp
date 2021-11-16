@@ -1,6 +1,5 @@
 #include "Crazyflie.h"
 
-    
 
 // bool logCallback(const std::map<TocItem,void*>& tocItemsAndValues, uint32_t period)
 // {

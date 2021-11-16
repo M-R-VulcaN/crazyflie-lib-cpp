@@ -1,6 +1,5 @@
 #pragma once
 
-#include <queue>
 #include <list>
 #include <thread>
 #include <mutex>
@@ -10,8 +9,6 @@
 #include "crazyflieLinkCpp/Packet.hpp"
 #include <functional>
 #include <atomic>
-// #include <boost/atomic/
-
 
 
 //The PacketCallback returns a boolean,

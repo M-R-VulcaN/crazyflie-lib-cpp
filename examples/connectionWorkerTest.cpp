@@ -1,7 +1,5 @@
-#include "ConnectionWorker.h"
 #include "Crazyflie.h"
-#include <chrono>
-#include <iostream>
+
 using bitcraze::crazyflieLinkCpp::Connection;
 using bitcraze::crazyflieLinkCpp::Packet;
 

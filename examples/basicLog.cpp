@@ -1,6 +1,4 @@
-#include <algorithm>
-#include <chrono>
-#include <errno.h>
+// #include <errno.h>
 #include "Crazyflie.h"
 
 using bitcraze::crazyflieLinkCpp::Connection;

@@ -1,6 +1,5 @@
 #include "Crazyflie.h"
 
-
 // typedef std::function<bool(const uint8_t *, uint8_t)> AppChannelCallback;
 // typedef std::function<bool(uint16_t, const ParamValue &)> ParamValueCallback;
 // typedef std::function<bool(const char *)> ConsoleCallback;

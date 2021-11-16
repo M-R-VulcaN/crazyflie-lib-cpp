@@ -1,5 +1,5 @@
-#include <iostream>
 #include "ConnectionWrapper.h"
+
 int main()
 {
     std::cout << isBigEndian() <<std::endl;

@@ -1,12 +1,3 @@
-#include <iostream>
-#include <thread>
-#include <mutex>
-#include <condition_variable>
-#include <chrono>
-#include <sstream>
-#include <queue>
-#include <vector>
-#include <thread>
 #include "Crazyflie.h"
 
 using namespace bitcraze::crazyflieLinkCpp;
