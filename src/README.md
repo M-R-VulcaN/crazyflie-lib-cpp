@@ -327,12 +327,12 @@ Conversion notes:
 
 
 
-# **LOG PROTOCOLS** (Port = 5)
+## **LOG PROTOCOLS** (Port = 5)
 
 Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to represent the ID of the param, increasing the potential size of the TOC by 256 times.
 
 
-## Log Settings Protocol Structure (Channel = 1)
+### Log Settings Protocol Structure (Channel = 1)
 
 **<span style="text-decoration:underline;">Create Block V1:</span>**
 
@@ -509,7 +509,6 @@ Command
 **<span style="text-decoration:underline;">Append to Block V1:</span>**
 
 **Send:**
-
 
 <table>
   <tr>
@@ -833,7 +832,6 @@ Command
 **<span style="text-decoration:underline;">Reset Blocks:</span>**
 
 **Send:**
-
 
 <table>
   <tr>
