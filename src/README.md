@@ -304,6 +304,589 @@ Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to rep
   </tr>
 </table>
 
+<!-----
+NEW: Check the "Suppress top comment" option to remove this info from the output.
+
+Conversion time: 1.115 seconds.
+
+
+Using this Markdown file:
+
+1. Paste this output into your source file.
+2. See the notes and action items below regarding this conversion run.
+3. Check the rendered output (headings, lists, code blocks, tables) for proper
+   formatting and use a linkchecker before you publish this page.
+
+Conversion notes:
+
+* Docs to Markdown version 1.0β31
+* Tue Nov 16 2021 05:24:05 GMT-0800 (PST)
+* Source doc: Doc: General C++ Lib Documentation
+* Tables are currently converted to HTML tables.
+----->
+
+
+
+# **LOG PROTOCOLS** (Port = 5)
+
+Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to represent the ID of the param, increasing the potential size of the TOC by 256 times.
+
+
+## Log Settings Protocol Structure (Channel = 1)
+
+**<span style="text-decoration:underline;">Create Block V1:</span>**
+
+**Send:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>0</strong>
+   </td>
+   <td><strong>&lt;new block id></strong>
+   </td>
+   <td><strong>&lt;first log type></strong>
+   </td>
+   <td><strong>&lt;first log id></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Create Block V1 
+<p>
+Command
+   </td>
+   <td>The ID of the new log block
+   </td>
+   <td>The new block’s first log variable’s type
+   </td>
+   <td>The new block’s first log variable’s ID
+   </td>
+  </tr>
+</table>
+
+
+**Receive:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>0</strong>
+   </td>
+   <td><strong>&lt;new block id></strong>
+   </td>
+   <td><strong>&lt;result status></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Create Block V1 
+<p>
+Command
+   </td>
+   <td>The ID of the log block you have requested to create
+   </td>
+   <td>Returns a success status [0] or the <a href="https://github.com/torvalds/linux/blob/master/include/uapi/asm-generic/errno-base.h">error</a> it encountered
+   </td>
+  </tr>
+</table>
+
+
+**<span style="text-decoration:underline;">Create Block V2:</span>**
+
+**Send:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>2
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>6</strong>
+   </td>
+   <td><strong>&lt;new block id></strong>
+   </td>
+   <td><strong>&lt;first log type></strong>
+   </td>
+   <td><strong>&lt;first log id></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Create Block V2 
+<p>
+Command
+   </td>
+   <td>The ID of the new log block
+   </td>
+   <td>The new block’s first log variable’s type
+   </td>
+   <td>The new block’s first log variable’s ID
+   </td>
+  </tr>
+</table>
+
+
+**Receive:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>6</strong>
+   </td>
+   <td><strong>&lt;new block id></strong>
+   </td>
+   <td><strong>&lt;result status></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Create Block V2 
+<p>
+Command
+   </td>
+   <td>The ID of the log block you have requested to create
+   </td>
+   <td>Returns a success status [0] or the <a href="https://github.com/torvalds/linux/blob/master/include/uapi/asm-generic/errno-base.h">error</a> it encountered
+   </td>
+  </tr>
+</table>
+
+
+**<span style="text-decoration:underline;">Append to Block V1:</span>**
+
+**Send:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>1</strong>
+   </td>
+   <td><strong>&lt;block id></strong>
+   </td>
+   <td><strong>&lt;log type></strong>
+   </td>
+   <td><strong>&lt;log id></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Append to Block V1 
+<p>
+Command
+   </td>
+   <td>The ID of the log block which you want to append
+   </td>
+   <td>The type of the log variable which you wish to append
+   </td>
+   <td>The ID of the log variable which you wish to append
+   </td>
+  </tr>
+</table>
+
+
+**Receive:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>1</strong>
+   </td>
+   <td><strong>&lt;block id></strong>
+   </td>
+   <td><strong>&lt;result status></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Append to Block V1 
+<p>
+Command
+   </td>
+   <td>The ID of the log block which you have requested to appended
+   </td>
+   <td>Returns a success status [0] or the <a href="https://github.com/torvalds/linux/blob/master/include/uapi/asm-generic/errno-base.h">error</a> it encountered
+   </td>
+  </tr>
+</table>
+
+
+**<span style="text-decoration:underline;">Append to Block V2:</span>**
+
+**Send:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>2
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>7</strong>
+   </td>
+   <td><strong>&lt;block id></strong>
+   </td>
+   <td><strong>&lt;log type></strong>
+   </td>
+   <td><strong>&lt;log id></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Append to Block V2 
+<p>
+Command
+   </td>
+   <td>The ID of the log block which you want to append
+   </td>
+   <td>The type of the log variable which you wish to append
+   </td>
+   <td>The ID of the log variable which you wish to append
+   </td>
+  </tr>
+</table>
+
+
+**Receive:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>7</strong>
+   </td>
+   <td><strong>&lt;block id></strong>
+   </td>
+   <td><strong>&lt;result status></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Append to Block V2 
+<p>
+Command
+   </td>
+   <td>The ID of the log block which you have requested to appended
+   </td>
+   <td>Returns a success status [0] or the <a href="https://github.com/torvalds/linux/blob/master/include/uapi/asm-generic/errno-base.h">error</a> it encountered
+   </td>
+  </tr>
+</table>
+
+
+
+
+**<span style="text-decoration:underline;">Delete Block:</span>**
+
+**Send:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>2</strong>
+   </td>
+   <td><strong>&lt;block id></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Delete Block 
+<p>
+Command
+   </td>
+   <td>The ID of the log block which you want to delete
+   </td>
+  </tr>
+</table>
+
+
+**Receive:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>2</strong>
+   </td>
+   <td><strong>&lt;block id></strong>
+   </td>
+   <td><strong>&lt;result status></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Delete Block Command
+   </td>
+   <td>The ID of the log block which you have requested to delete
+   </td>
+   <td>Returns a success status [0] or the <a href="https://github.com/torvalds/linux/blob/master/include/uapi/asm-generic/errno-base.h">error</a> it encountered
+   </td>
+  </tr>
+</table>
+
+
+**<span style="text-decoration:underline;">Start Receiving from  Block:</span>**
+
+**Send:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>3</strong>
+   </td>
+   <td><strong>&lt;block id></strong>
+   </td>
+   <td><strong>&lt;period></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Start Block Command
+   </td>
+   <td>The ID of the log block which you want to start to receive from 
+   </td>
+   <td>The rate in centi-seconds by which to send the log
+   </td>
+  </tr>
+</table>
+
+
+**Receive:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>3</strong>
+   </td>
+   <td><strong>&lt;block id></strong>
+   </td>
+   <td><strong>&lt;result status></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Start Block Command
+   </td>
+   <td>The ID of the log block which you have requested to delete
+   </td>
+   <td>Returns a success status [0] or the <a href="https://github.com/torvalds/linux/blob/master/include/uapi/asm-generic/errno-base.h">error</a> it encountered
+   </td>
+  </tr>
+</table>
+
+
+
+
+**<span style="text-decoration:underline;">Reset Blocks:</span>**
+
+**Send:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>5</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Reset Blocks Command
+   </td>
+  </tr>
+</table>
+
+
+**Receive:**
+
+
+<table>
+  <tr>
+   <td>Byte #
+   </td>
+   <td>1
+   </td>
+   <td>1
+   </td>
+  </tr>
+  <tr>
+   <td>Value:
+   </td>
+   <td><strong>5</strong>
+   </td>
+   <td><strong>&lt;result status></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Description:
+   </td>
+   <td>Reset Blocks Command
+   </td>
+   <td>Returns a success status [0] or the <a href="https://github.com/torvalds/linux/blob/master/include/uapi/asm-generic/errno-base.h">error</a> it encountered
+   </td>
+  </tr>
+</table>
+
 
 
 
