@@ -33,7 +33,7 @@ Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to rep
 
 **<span style="text-decoration:underline;">Set Param Value:</span>**
 
-**Send:**
+*Send:*
 
 
 <table>
@@ -64,7 +64,7 @@ Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to rep
 </table>
 
 
-**Receive:**
+*Receive:*
 
 
 <table>
@@ -100,7 +100,7 @@ Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to rep
 
 **<span style="text-decoration:underline;">Read Param Value:</span>**
 
-**Send:**
+*Send:*
 
 
 <table>
@@ -125,7 +125,7 @@ Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to rep
 </table>
 
 
-**Receive:**
+*Receive:*
 
 
 <table>
@@ -161,7 +161,7 @@ Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to rep
 
 **<span style="text-decoration:underline;">Get Toc Item V2:</span>**
 
-**Send:**
+*Send:*
 
 
 <table>
@@ -192,7 +192,7 @@ Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to rep
 </table>
 
 
-**Receive:**
+*Receive:*
 
 
 <table>
@@ -243,7 +243,7 @@ Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to rep
 
 **<span style="text-decoration:underline;">Get Toc Info V2:</span>**
 
-**Send:**
+*Send:*
 
 
 <table>
@@ -268,7 +268,7 @@ Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to rep
 </table>
 
 
-**Receive:**
+*Receive:*
 
 
 <table>
@@ -304,28 +304,6 @@ Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to rep
   </tr>
 </table>
 
-<!-----
-NEW: Check the "Suppress top comment" option to remove this info from the output.
-
-Conversion time: 1.115 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β31
-* Tue Nov 16 2021 05:24:05 GMT-0800 (PST)
-* Source doc: Doc: General C++ Lib Documentation
-* Tables are currently converted to HTML tables.
------>
-
-
 
 ## **LOG PROTOCOLS** (Port = 5)
 
@@ -336,7 +314,7 @@ Note: The difference between V2 and V1 is the use of 2 bytes instead of 1 to rep
 
 **<span style="text-decoration:underline;">Create Block V1:</span>**
 
-**Send:**
+*Send:*
 
 
 <table>
@@ -381,7 +359,7 @@ Command
 </table>
 
 
-**Receive:**
+*Receive:*
 
 
 <table>
@@ -422,7 +400,7 @@ Command
 
 **<span style="text-decoration:underline;">Create Block V2:</span>**
 
-**Send:**
+*Send:*
 
 
 <table>
@@ -467,7 +445,7 @@ Command
 </table>
 
 
-**Receive:**
+*Receive:*
 
 
 <table>
@@ -508,7 +486,7 @@ Command
 
 **<span style="text-decoration:underline;">Append to Block V1:</span>**
 
-**Send:**
+*Send:*
 
 <table>
   <tr>
@@ -552,7 +530,7 @@ Command
 </table>
 
 
-**Receive:**
+*Receive:*
 
 
 <table>
@@ -593,7 +571,7 @@ Command
 
 **<span style="text-decoration:underline;">Append to Block V2:</span>**
 
-**Send:**
+*Send:*
 
 
 <table>
@@ -638,7 +616,7 @@ Command
 </table>
 
 
-**Receive:**
+*Receive:*
 
 
 <table>
@@ -677,11 +655,9 @@ Command
 </table>
 
 
-
-
 **<span style="text-decoration:underline;">Delete Block:</span>**
 
-**Send:**
+*Send:*
 
 
 <table>
@@ -714,7 +690,7 @@ Command
 </table>
 
 
-**Receive:**
+*Receive:*
 
 
 <table>
@@ -753,7 +729,7 @@ Command
 
 **<span style="text-decoration:underline;">Start Receiving from  Block:</span>**
 
-**Send:**
+*Send:*
 
 
 <table>
@@ -790,7 +766,7 @@ Command
 </table>
 
 
-**Receive:**
+*Receive:*
 
 
 <table>
@@ -826,12 +802,9 @@ Command
   </tr>
 </table>
 
-
-
-
 **<span style="text-decoration:underline;">Reset Blocks:</span>**
 
-**Send:**
+*Send:*
 
 <table>
   <tr>
@@ -854,9 +827,7 @@ Command
   </tr>
 </table>
 
-
-**Receive:**
-
+*Receive:*
 
 <table>
   <tr>
